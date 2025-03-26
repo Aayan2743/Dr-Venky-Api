@@ -1,0 +1,7 @@
+1526
+123477
+
+bugs
+when bar code enter direct need to come without pop up
+after add customer need to refresh the page 
+double time coming when using the bar code short cut

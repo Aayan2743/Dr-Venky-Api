@@ -1,0 +1,60 @@
+[27-Nov-2024 05:10:18 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:11:14 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:11:24 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:14:22 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:14:34 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:14:39 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:14:56 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:14:59 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:15:12 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:15:26 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:15:36 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:15:48 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:15:54 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:17:37 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:17:48 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:17:49 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:18:00 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:18:02 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:18:02 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:18:03 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:18:12 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:19:17 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:20:26 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:20:29 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:20:30 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:20:42 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:27:04 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[27-Nov-2024 05:27:40 UTC] PHP Fatal error:  Cannot redeclare App\Http\Kernel::$middleware in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Kernel.php on line 76
+[23-Dec-2024 18:05:58 Asia/Kolkata] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Validator as Validator because the name is already in use in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Controllers/AuthController.php on line 23
+[23-Dec-2024 18:06:33 Asia/Kolkata] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Validator as Validator because the name is already in use in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Controllers/AuthController.php on line 23
+[23-Dec-2024 18:07:08 Asia/Kolkata] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Validator as Validator because the name is already in use in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Controllers/AuthController.php on line 23
+[26-Dec-2024 22:50:40 Asia/Kolkata] PHP Fatal error:  Cannot redeclare App\Http\Controllers\AppointmentController::generateReceipt() in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Controllers/AppointmentController.php on line 61
+[26-Dec-2024 22:52:29 Asia/Kolkata] PHP Fatal error:  Cannot redeclare App\Http\Controllers\AppointmentController::generateReceipt() in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Controllers/AppointmentController.php on line 61
+[26-Dec-2024 22:52:43 Asia/Kolkata] PHP Fatal error:  Cannot redeclare App\Http\Controllers\AppointmentController::generateReceipt() in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Controllers/AppointmentController.php on line 61
+[28-Dec-2024 15:32:09 Asia/Kolkata] PHP Fatal error:  Cannot declare class App\Http\Helpers\CustomHelper, because the name is already in use in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/CustomHelper.php on line 5
+[30-Dec-2024 16:40:14 Asia/Kolkata] PHP Fatal error:  Trait "Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships" not found in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Models/Stock.php on line 12
+[30-Dec-2024 16:45:22 Asia/Kolkata] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Models/Product.php on line 5
+[30-Dec-2024 16:46:05 Asia/Kolkata] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Models/Product.php on line 5
+[30-Dec-2024 16:49:54 Asia/Kolkata] PHP Fatal error:  Trait "Spatie\MediaLibrary\InteractsWithMedia" not found in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Models/Product.php on line 15
+[30-Dec-2024 16:50:16 Asia/Kolkata] PHP Fatal error:  Trait "App\Models\InteractsWithMedia" not found in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Models/Product.php on line 15
+[06-Jan-2025 11:54:53 Asia/Kolkata] PHP Fatal error:  Cannot use Illuminate\Http\Exceptions\HttpResponseException as HttpResponseException because the name is already in use in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Controllers/AppointmentController.php on line 21
+[06-Jan-2025 12:48:54 Asia/Kolkata] PHP Fatal error:  Cannot redeclare App\Http\Controllers\AppointmentController::edit() in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Controllers/AppointmentController.php on line 144
+[06-Jan-2025 12:49:27 Asia/Kolkata] PHP Fatal error:  Cannot redeclare App\Http\Controllers\AppointmentController::edit() in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Controllers/AppointmentController.php on line 144
+[13-Jan-2025 16:19:38 Asia/Kolkata] PHP Fatal error:  Class App\Exports\OrderProductsExport contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Maatwebsite\Excel\Concerns\FromCollection::collection) in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Exports/OrderProductsExport.php on line 10
+[21-Jan-2025 06:38:36 UTC] PHP Parse error:  Invalid numeric literal in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/CustomHelper.php on line 63
+[21-Jan-2025 06:38:42 UTC] PHP Parse error:  Invalid numeric literal in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/CustomHelper.php on line 63
+[21-Jan-2025 06:39:35 UTC] PHP Parse error:  Invalid numeric literal in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/CustomHelper.php on line 63
+[21-Jan-2025 07:08:12 UTC] PHP Parse error:  syntax error, unexpected token "public", expecting end of file in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/CustomHelper.php on line 228
+[21-Jan-2025 12:45:48 Asia/Kolkata] PHP Fatal error:  Cannot redeclare App\Http\Controllers\AuthController::verifyOtp() in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Controllers/AuthController.php on line 135
+[21-Jan-2025 12:45:54 Asia/Kolkata] PHP Fatal error:  Cannot redeclare App\Http\Controllers\AuthController::verifyOtp() in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Controllers/AuthController.php on line 135
+[21-Jan-2025 12:46:14 Asia/Kolkata] PHP Fatal error:  Cannot redeclare App\Http\Controllers\AuthController::verifyOtp() in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Controllers/AuthController.php on line 135
+[21-Jan-2025 12:46:32 Asia/Kolkata] PHP Fatal error:  Cannot redeclare App\Http\Controllers\AuthController::verifyOtp() in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Controllers/AuthController.php on line 135
+[21-Jan-2025 12:47:23 Asia/Kolkata] PHP Fatal error:  Cannot redeclare App\Http\Controllers\AuthController::verifyOtp() in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Controllers/AuthController.php on line 135
+[21-Jan-2025 12:47:43 Asia/Kolkata] PHP Fatal error:  Cannot redeclare App\Http\Controllers\AuthController::verifyOtp() in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Controllers/AuthController.php on line 135
+[21-Jan-2025 12:47:52 Asia/Kolkata] PHP Fatal error:  Cannot redeclare App\Http\Controllers\AuthController::verifyOtp() in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Controllers/AuthController.php on line 135
+[21-Jan-2025 12:48:17 Asia/Kolkata] PHP Fatal error:  Cannot redeclare App\Http\Controllers\AuthController::verifyOtp() in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Controllers/AuthController.php on line 135
+[21-Jan-2025 12:48:51 Asia/Kolkata] PHP Fatal error:  Cannot redeclare App\Http\Controllers\AuthController::verifyOtp() in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Controllers/AuthController.php on line 135
+[23-Jan-2025 18:14:01 Asia/Kolkata] PHP Fatal error:  Trait "Spatie\MediaLibrary\InteractsWithMedia" not found in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Models/ProductCategory.php on line 14
+[23-Jan-2025 18:15:56 Asia/Kolkata] PHP Fatal error:  Trait "Spatie\MediaLibrary\InteractsWithMedia" not found in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Models/ProductCategory.php on line 14
+[28-Jan-2025 10:59:28 Asia/Kolkata] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Mail as Mail because the name is already in use in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/Controllers/AuthController.php on line 25

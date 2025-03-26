@@ -1,0 +1,111 @@
+resources\js\router\modules\posOrderRoutes.js
+
+PosOrderListComponent
+resources\js\components\admin\posOrders\PosOrderListComponent.vue
+
+   orders: function () {
+            return this.$store.getters['posOrder/lists'];
+        },
+
+resources\js\store\modules\posOrder.js
+
+ lists: function (state, payload) {
+            state.lists = payload
+        },
+
+  lists: function (context, payload) {
+            return new Promise((resolve, reject) => {
+                let url = 'admin/pos-order';
+                if (payload) {
+                    url = url + appService.requestHandler(payload);
+                }
+                axios.get(url).then((res) => {
+                    if(typeof payload.vuex === "undefined" || payload.vuex === true) {
+                        context.commit('lists', res.data.data);
+                        context.commit('page', res.data.meta);
+                        context.commit('pagination', res.data);
+                    }
+
+                    resolve(res);
+                    console.log("get" + res.data);
+                }).catch((err) => {
+                    reject(err);
+                });
+            });
+        },
+
+app\Http\Controllers\Admin\PosOrderController.php
+
+  public function index(PaginateRequest $request): \Illuminate\Http\Response | \Illuminate\Http\Resources\Json\AnonymousResourceCollection | \Illuminate\Contracts\Foundation\Application | \Illuminate\Contracts\Routing\ResponseFactory
+    {
+        try {
+            return OrderResource::collection($this->orderService->list($request));
+        } catch (Exception $exception) {
+            return response(['status' => false, 'message' => $exception->getMessage()], 422);
+        }
+    }
+
+*******************
+props.search.user_id
+customers
+
+resources\js\components\admin\posOrders\PosOrderListComponent.vue
+
+ customers: function () {
+            return this.$store.getters['user/lists'];
+        },
+
+resources\js\store\modules\user.js
+
+ lists: function (context, payload) {
+            return new Promise((resolve, reject) => {
+                let url = 'admin/users';
+                if (payload) {
+                    url = url + appService.requestHandler(payload);
+                }
+                axios.get(url).then((res) => {
+                    if(typeof payload.vuex === "undefined" || payload.vuex === true) {
+                        context.commit('lists', res.data.data);
+                        context.commit('page', res.data.meta);
+                        context.commit('pagination', res.data);
+                    }
+
+                    console.log(res);
+
+                    resolve(res);
+                }).catch((err) => {
+                    reject(err);
+                });
+            });
+        },
+
+Route::prefix('users')->name('users.')->group(function () {
+        Route::get('/', [SimpleUserController::class, 'index']);
+        Route::get('/lists_operators', [SimpleUserController::class, 'lists_operator']);
+    });
+
+app\Http\Controllers\Admin\SimpleUserController.php
+
+
+ public function index(PaginateRequest $request)
+    {
+        try {
+            return SimpleUserResource::collection($this->simpleUserService->list($request));
+        } catch (Exception $exception) {
+            return response(['status' => false, 'message' => $exception->getMessage()], 422);
+        }
+    }
+
+app\Http\Resources\SimpleUserResource.php
+
+app\Services\SimpleUserService.php
+
+                        <div class="col-12 sm:col-6 md:col-4 xl:col-3">
+                            <label for="user_id" class="db-field-title">
+                               Store Operator
+                            </label>
+                            <vue-select class="db-field-control f-b-custom-select" id="user_id"
+                                v-model="props.search.email" :options="customers" label-by="name" value-by="id"
+                                :closeOnSelect="true" :searchable="true" :clearOnClose="true" placeholder="--"
+                                search-placeholder="--" />
+                        </div>

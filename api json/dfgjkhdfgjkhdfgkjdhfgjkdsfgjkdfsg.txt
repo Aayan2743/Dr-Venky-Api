@@ -1,0 +1,13 @@
+user
+subservice
+service
+
+patientCategory
+mypet
+appointment
+
+need to do
+labreport
+labreport
+prescription
+clinictransaction

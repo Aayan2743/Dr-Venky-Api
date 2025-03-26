@@ -1,0 +1,43 @@
+{
+	"info": {
+		"_postman_id": "b925e71f-fbee-42c1-8ac8-042601f0777c",
+		"name": "Drvenkys",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23889603",
+		"_collection_link": "https://universal-flare-22463.postman.co/workspace/New-Team-Workspace~8f218b6e-eac7-4e5e-9bc4-a0682c094a6e/collection/23889603-b925e71f-fbee-42c1-8ac8-042601f0777c?action=share&source=collection_link&creator=23889603"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:8002/api/requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

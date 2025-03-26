@@ -1,0 +1,21 @@
+[28-Dec-2024 09:54:50 UTC] PHP Warning:  require(/home/kozlmwpj/api.drvenkysanimalhospital.com/vendor/composer/../../app/Helpers/CustomHelper.php): Failed to open stream: No such file or directory in /home/kozlmwpj/api.drvenkysanimalhospital.com/vendor/composer/autoload_real.php on line 41
+[28-Dec-2024 09:54:50 UTC] PHP Warning:  require(/home/kozlmwpj/api.drvenkysanimalhospital.com/vendor/composer/../../app/Helpers/CustomHelper.php): Failed to open stream: No such file or directory in /home/kozlmwpj/api.drvenkysanimalhospital.com/vendor/composer/autoload_real.php on line 41
+[28-Dec-2024 09:54:50 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/kozlmwpj/api.drvenkysanimalhospital.com/vendor/composer/../../app/Helpers/CustomHelper.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/kozlmwpj/api.drvenkysanimalhospital.com/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/kozlmwpj/api.drvenkysanimalhospital.com/vendor/composer/autoload_real.php(45): {closure}()
+#1 /home/kozlmwpj/api.drvenkysanimalhospital.com/vendor/autoload.php(25): ComposerAutoloaderInitfe33f98a750b8c5a51b30c78bd3fab21::getLoader()
+#2 /home/kozlmwpj/api.drvenkysanimalhospital.com/artisan(18): require('/home/kozlmwpj/...')
+#3 {main}
+  thrown in /home/kozlmwpj/api.drvenkysanimalhospital.com/vendor/composer/autoload_real.php on line 41
+[28-Dec-2024 09:54:50 UTC] PHP Warning:  require(/home/kozlmwpj/api.drvenkysanimalhospital.com/vendor/composer/../../app/Helpers/CustomHelper.php): Failed to open stream: No such file or directory in /home/kozlmwpj/api.drvenkysanimalhospital.com/vendor/composer/autoload_real.php on line 41
+[28-Dec-2024 09:54:50 UTC] PHP Warning:  require(/home/kozlmwpj/api.drvenkysanimalhospital.com/vendor/composer/../../app/Helpers/CustomHelper.php): Failed to open stream: No such file or directory in /home/kozlmwpj/api.drvenkysanimalhospital.com/vendor/composer/autoload_real.php on line 41
+[28-Dec-2024 09:54:50 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/kozlmwpj/api.drvenkysanimalhospital.com/vendor/composer/../../app/Helpers/CustomHelper.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/kozlmwpj/api.drvenkysanimalhospital.com/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/kozlmwpj/api.drvenkysanimalhospital.com/vendor/composer/autoload_real.php(45): {closure}()
+#1 /home/kozlmwpj/api.drvenkysanimalhospital.com/vendor/autoload.php(25): ComposerAutoloaderInitfe33f98a750b8c5a51b30c78bd3fab21::getLoader()
+#2 /home/kozlmwpj/api.drvenkysanimalhospital.com/artisan(18): require('/home/kozlmwpj/...')
+#3 {main}
+  thrown in /home/kozlmwpj/api.drvenkysanimalhospital.com/vendor/composer/autoload_real.php on line 41
+[21-Jan-2025 04:18:02 UTC] PHP Parse error:  syntax error, unexpected variable "$url" in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/CustomHelper.php on line 18
+[21-Jan-2025 06:39:02 UTC] PHP Parse error:  Invalid numeric literal in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/CustomHelper.php on line 63
+[21-Jan-2025 06:40:02 UTC] PHP Parse error:  Invalid numeric literal in /home/kozlmwpj/api.drvenkysanimalhospital.com/app/Http/CustomHelper.php on line 63

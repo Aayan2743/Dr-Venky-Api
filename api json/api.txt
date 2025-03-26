@@ -1,0 +1,1201 @@
+Credentials
+Role Admin
+User : sk.asif0490@gmail.com
+password : 123456789
+
+
+Role User
+User : nagagopi74@gmail.com
+password : Admin@123
+id : 15
+
+
+Role Doctor
+User : balaji@doc.com
+password : 123456789
+id: 52
+
+
+Role Receiptionist
+User : navya@rec.com
+password : 123456789
+
+*******************
+Appointment booking page api
+
+For : fetching User Added pets 
+
+http://192.168.0.230:8002/api/get_user_pets
+Method :  GET 
+
+response 
+
+{
+    "status": true,
+    "data": [
+        {
+            "id": 1,
+            "petname": "Simba",
+            "petgender": "M",
+            "petbread": "German",
+            "category": "Dog",
+            "created_at": "2024-11-14T11:23:46.000000Z",
+            "updated_at": "2024-11-14T11:23:46.000000Z",
+            "user_assigned": 1
+        }
+    ],
+    "Consultation_fee": [
+        {
+            "fee": 500
+        }
+    ],
+    "message": "Data Available"
+}
+
+
+*************************************************************
+Appointment booking page api
+
+For : Adding Appointment for Added pets 
+
+Method : POST
+Payloads
+
+petname -  Need to send petid which already sended in previously get api
+dateofapp - data should be grater than or equal to today data & time
+amount  - amount also given in previously get api
+payment - 0 for online , 1 for half line
+
+response 
+
+{
+    "status": true,
+    "message": "Appotinemnt Created"
+}	 
+***************************
+Appointment booking page api
+
+For List All pets while user adding his / her pets
+
+
+http://192.168.0.230:8002/api/list_all_pet
+
+Method: Get
+
+{
+    "status": true,
+    "data": [
+        {
+            "id": 1,
+            "typeofpet": "Dog",
+            "created_at": "2024-11-12T06:24:02.000000Z",
+            "updated_at": "2024-11-12T06:24:02.000000Z"
+        },
+        {
+            "id": 2,
+            "typeofpet": "Cat",
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 3,
+            "typeofpet": "Rabbits",
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 4,
+            "typeofpet": "Guinea Pigs",
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 5,
+            "typeofpet": "Hamsters",
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 6,
+            "typeofpet": "Ferrets",
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 7,
+            "typeofpet": "Gerbils",
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 8,
+            "typeofpet": "Hedgehogs",
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 9,
+            "typeofpet": "Mice and Rats",
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 10,
+            "typeofpet": "Parakeets (Budgies)",
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 11,
+            "typeofpet": "Cockatiels",
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 12,
+            "typeofpet": "Lovebirds",
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 13,
+            "typeofpet": "Parrots",
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 14,
+            "typeofpet": "Canaries",
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 15,
+            "typeofpet": "Finches",
+            "created_at": null,
+            "updated_at": null
+        },
+        {
+            "id": 16,
+            "typeofpet": "Doves",
+            "created_at": null,
+            "updated_at": null
+        }
+    ]
+}
+
+
+********************
+Appointment booking page api
+
+http://192.168.0.230:8002/api/add_my_pets
+
+Method : POST
+
+Payloads
+petname : text 
+petgender : its should be  M, F Only
+petbread : text
+category :  drop down name only
+
+
+response
+{
+    "status": true,
+    "message": "Pet Created Successfully"
+}
+
+*****************************************
+Dashboard Page -- User
+need to check
+
+http://192.168.0.230:8002/api/user_dashboard?appointmentdate=2024-11-19&petid=1
+
+method: GET
+
+{
+    "status": true,
+    "get_total_appointment": 2,
+    "get_todays_appointment": 1,
+    "get_pet_details": 4,
+    "get_recent_appointment": [
+        {
+            "id": 25,
+            "user_id": 15,
+            "pet_id": 1,
+            "dr_id": null,
+            "dateofapp": "2024-11-19 14:10:00",
+            "status": 0,
+            "amount": 1500,
+            "created_at": "2024-11-19T05:19:11.000000Z",
+            "updated_at": "2024-11-19T05:19:11.000000Z",
+            "payment": 1,
+            "pet_details": {
+                "id": 1,
+                "petname": "Simba",
+                "petgender": "M",
+                "petbread": "German",
+                "category": "Dog",
+                "created_at": "2024-11-14T11:23:46.000000Z",
+                "updated_at": "2024-11-14T11:23:46.000000Z",
+                "user_assigned": 15
+            }
+        }
+    ],
+    "get_my_pet_details": [
+        {
+            "id": 1,
+            "petname": "Simba",
+            "petgender": "M",
+            "petbread": "German",
+            "category": "Dog",
+            "created_at": "2024-11-14T11:23:46.000000Z",
+            "updated_at": "2024-11-14T11:23:46.000000Z",
+            "user_assigned": 15
+        },
+        {
+            "id": 2,
+            "petname": "Catty",
+            "petgender": "F",
+            "petbread": "Persian",
+            "category": "Cat",
+            "created_at": "2024-11-18T05:46:01.000000Z",
+            "updated_at": "2024-11-19T05:46:01.000000Z",
+            "user_assigned": 15
+        },
+        {
+            "id": 3,
+            "petname": "bunny",
+            "petgender": "M",
+            "petbread": "street dog",
+            "category": "Dog",
+            "created_at": "2024-11-19T06:34:46.000000Z",
+            "updated_at": "2024-11-19T06:34:46.000000Z",
+            "user_assigned": 15
+        },
+        {
+            "id": 4,
+            "petname": "pussy",
+            "petgender": "F",
+            "petbread": "hybrid",
+            "category": "Cat",
+            "created_at": "2024-11-19T06:35:32.000000Z",
+            "updated_at": "2024-11-19T06:35:32.000000Z",
+            "user_assigned": 15
+        }
+    ]
+}
+
+********************
+
+http://192.168.0.230:8002/api/user_dashboard?petid=1
+
+Method :GET
+
+{
+    "status": true,
+    "get_total_appointment": 2,
+    "get_todays_appointment": 1,
+    "get_pet_details": 4,
+    "get_recent_appointment": [
+        {
+            "id": 25,
+            "user_id": 15,
+            "pet_id": 1,
+            "dr_id": null,
+            "dateofapp": "2024-11-19 14:10:00",
+            "status": 0,
+            "amount": 1500,
+            "created_at": "2024-11-19T05:19:11.000000Z",
+            "updated_at": "2024-11-19T05:19:11.000000Z",
+            "payment": 1,
+            "pet_details": {
+                "id": 1,
+                "petname": "Simba",
+                "petgender": "M",
+                "petbread": "German",
+                "category": "Dog",
+                "created_at": "2024-11-14T11:23:46.000000Z",
+                "updated_at": "2024-11-14T11:23:46.000000Z",
+                "user_assigned": 15
+            }
+        }
+    ],
+    "get_my_pet_details": [
+        {
+            "id": 1,
+            "petname": "Simba",
+            "petgender": "M",
+            "petbread": "German",
+            "category": "Dog",
+            "created_at": "2024-11-14T11:23:46.000000Z",
+            "updated_at": "2024-11-14T11:23:46.000000Z",
+            "user_assigned": 15
+        },
+        {
+            "id": 2,
+            "petname": "Catty",
+            "petgender": "F",
+            "petbread": "Persian",
+            "category": "Cat",
+            "created_at": "2024-11-18T05:46:01.000000Z",
+            "updated_at": "2024-11-19T05:46:01.000000Z",
+            "user_assigned": 15
+        },
+        {
+            "id": 3,
+            "petname": "bunny",
+            "petgender": "M",
+            "petbread": "street dog",
+            "category": "Dog",
+            "created_at": "2024-11-19T06:34:46.000000Z",
+            "updated_at": "2024-11-19T06:34:46.000000Z",
+            "user_assigned": 15
+        },
+        {
+            "id": 4,
+            "petname": "pussy",
+            "petgender": "F",
+            "petbread": "hybrid",
+            "category": "Cat",
+            "created_at": "2024-11-19T06:35:32.000000Z",
+            "updated_at": "2024-11-19T06:35:32.000000Z",
+            "user_assigned": 15
+        }
+    ]
+}
+
+
+
+
+************************** USER*****************************************
+http://192.168.0.230:8002/api/user_dashboard
+Method: GET
+
+{
+    "status": true,
+    "get_total_appointment": 2,
+    "get_todays_appointment": 1,
+    "get_pet_details": 4,
+    "get_recent_appointment": [
+        {
+            "id": 25,
+            "user_id": 15,
+            "pet_id": 1,
+            "dr_id": null,
+            "dateofapp": "2024-11-19 14:10:00",
+            "status": 0,
+            "amount": 1500,
+            "created_at": "2024-11-19T05:19:11.000000Z",
+            "updated_at": "2024-11-19T05:19:11.000000Z",
+            "payment": 1,
+            "pet_details": {
+                "id": 1,
+                "petname": "Simba",
+                "petgender": "M",
+                "petbread": "German",
+                "category": "Dog",
+                "created_at": "2024-11-14T11:23:46.000000Z",
+                "updated_at": "2024-11-14T11:23:46.000000Z",
+                "user_assigned": 15
+            }
+        },
+        {
+            "id": 26,
+            "user_id": 15,
+            "pet_id": 2,
+            "dr_id": null,
+            "dateofapp": "2024-11-18 14:10:00",
+            "status": 0,
+            "amount": 500,
+            "created_at": "2024-11-19T05:19:11.000000Z",
+            "updated_at": "2024-11-19T05:19:11.000000Z",
+            "payment": 1,
+            "pet_details": {
+                "id": 2,
+                "petname": "Catty",
+                "petgender": "F",
+                "petbread": "Persian",
+                "category": "Cat",
+                "created_at": "2024-11-18T05:46:01.000000Z",
+                "updated_at": "2024-11-19T05:46:01.000000Z",
+                "user_assigned": 15
+            }
+        }
+    ],
+    "get_my_pet_details": [
+        {
+            "id": 1,
+            "petname": "Simba",
+            "petgender": "M",
+            "petbread": "German",
+            "category": "Dog",
+            "created_at": "2024-11-14T11:23:46.000000Z",
+            "updated_at": "2024-11-14T11:23:46.000000Z",
+            "user_assigned": 15
+        },
+        {
+            "id": 2,
+            "petname": "Catty",
+            "petgender": "F",
+            "petbread": "Persian",
+            "category": "Cat",
+            "created_at": "2024-11-18T05:46:01.000000Z",
+            "updated_at": "2024-11-19T05:46:01.000000Z",
+            "user_assigned": 15
+        },
+        {
+            "id": 3,
+            "petname": "bunny",
+            "petgender": "M",
+            "petbread": "street dog",
+            "category": "Dog",
+            "created_at": "2024-11-19T06:34:46.000000Z",
+            "updated_at": "2024-11-19T06:34:46.000000Z",
+            "user_assigned": 15
+        },
+        {
+            "id": 4,
+            "petname": "pussy",
+            "petgender": "F",
+            "petbread": "hybrid",
+            "category": "Cat",
+            "created_at": "2024-11-19T06:35:32.000000Z",
+            "updated_at": "2024-11-19T06:35:32.000000Z",
+            "user_assigned": 15
+        }
+    ]
+}
+
+***************************
+Appointment related 
+
+http://192.168.0.230:8002/api/user_appointment_history
+
+for display all history desc order
+
+method : get
+
+display all 
+
+{
+    "status": true,
+    "data": [
+        {
+            "id": 25,
+            "user_id": 15,
+            "pet_id": 1,
+            "dr_id": 52,
+            "dateofapp": "2024-11-19 14:10:00",
+            "status": 0,
+            "amount": 1500,
+            "created_at": "2024-11-19T05:19:11.000000Z",
+            "updated_at": "2024-11-19T05:19:11.000000Z",
+            "payment": 1,
+            "doctor_details": {
+                "id": 52,
+                "name": "Doctor Balaji",
+                "email": "balaji@doc.com",
+                "phone": "9440161009",
+                "username": "balaji395",
+                "email_verified_at": "2024-10-10T07:23:36.000000Z",
+                "device_token": null,
+                "web_token": null,
+                "status": 5,
+                "country_code": "+297",
+                "is_guest": 10,
+                "balance": "0.000000",
+                "creator_type": null,
+                "creator_id": null,
+                "editor_type": null,
+                "editor_id": null,
+                "created_at": "2024-10-10T07:23:36.000000Z",
+                "updated_at": "2024-11-18T09:28:03.000000Z",
+                "deleted_at": null,
+                "password_code": 6847,
+                "exp_time": "2024-11-14 16:34:06",
+                "user_type": 2,
+                "state": "AP",
+                "city": "Nellore",
+                "profile_picture": "profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png",
+                "designation": null,
+                "mypets": 0,
+                "profile_picture_url": "http://192.168.0.230:8002/storage/profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png"
+            },
+            "pet_details": {
+                "id": 1,
+                "petname": "Simba",
+                "petgender": "M",
+                "petbread": "German",
+                "category": "Dog",
+                "created_at": "2024-11-14T11:23:46.000000Z",
+                "updated_at": "2024-11-14T11:23:46.000000Z",
+                "user_assigned": 15
+            }
+        },
+        {
+            "id": 26,
+            "user_id": 15,
+            "pet_id": 2,
+            "dr_id": 52,
+            "dateofapp": "2024-11-18 14:10:00",
+            "status": 0,
+            "amount": 500,
+            "created_at": "2024-11-19T05:19:11.000000Z",
+            "updated_at": "2024-11-19T05:19:11.000000Z",
+            "payment": 1,
+            "doctor_details": {
+                "id": 52,
+                "name": "Doctor Balaji",
+                "email": "balaji@doc.com",
+                "phone": "9440161009",
+                "username": "balaji395",
+                "email_verified_at": "2024-10-10T07:23:36.000000Z",
+                "device_token": null,
+                "web_token": null,
+                "status": 5,
+                "country_code": "+297",
+                "is_guest": 10,
+                "balance": "0.000000",
+                "creator_type": null,
+                "creator_id": null,
+                "editor_type": null,
+                "editor_id": null,
+                "created_at": "2024-10-10T07:23:36.000000Z",
+                "updated_at": "2024-11-18T09:28:03.000000Z",
+                "deleted_at": null,
+                "password_code": 6847,
+                "exp_time": "2024-11-14 16:34:06",
+                "user_type": 2,
+                "state": "AP",
+                "city": "Nellore",
+                "profile_picture": "profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png",
+                "designation": null,
+                "mypets": 0,
+                "profile_picture_url": "http://192.168.0.230:8002/storage/profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png"
+            },
+            "pet_details": {
+                "id": 2,
+                "petname": "Catty",
+                "petgender": "F",
+                "petbread": "Persian",
+                "category": "Cat",
+                "created_at": "2024-11-18T05:46:01.000000Z",
+                "updated_at": "2024-11-19T05:46:01.000000Z",
+                "user_assigned": 15
+            }
+        }
+    ]
+}
+
+*********************************
+
+http://192.168.0.230:8002/api/user_appointment_history?petid=1&appointmentdate=2024-11-19
+
+method : GET
+search by patient id and date
+
+{
+    "status": true,
+    "patient_history": [
+        {
+            "id": 25,
+            "user_id": 15,
+            "pet_id": 1,
+            "dr_id": 52,
+            "dateofapp": "2024-11-19 14:10:00",
+            "status": 0,
+            "amount": 1500,
+            "created_at": "2024-11-19T05:19:11.000000Z",
+            "updated_at": "2024-11-19T05:19:11.000000Z",
+            "payment": 1,
+            "doctor_details": {
+                "id": 52,
+                "name": "Doctor Balaji",
+                "email": "balaji@doc.com",
+                "phone": "9440161009",
+                "username": "balaji395",
+                "email_verified_at": "2024-10-10T07:23:36.000000Z",
+                "device_token": null,
+                "web_token": null,
+                "status": 5,
+                "country_code": "+297",
+                "is_guest": 10,
+                "balance": "0.000000",
+                "creator_type": null,
+                "creator_id": null,
+                "editor_type": null,
+                "editor_id": null,
+                "created_at": "2024-10-10T07:23:36.000000Z",
+                "updated_at": "2024-11-18T09:28:03.000000Z",
+                "deleted_at": null,
+                "password_code": 6847,
+                "exp_time": "2024-11-14 16:34:06",
+                "user_type": 2,
+                "state": "AP",
+                "city": "Nellore",
+                "profile_picture": "profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png",
+                "designation": null,
+                "mypets": 0,
+                "profile_picture_url": "http://192.168.0.230:8002/storage/profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png"
+            },
+            "pet_details": {
+                "id": 1,
+                "petname": "Simba",
+                "petgender": "M",
+                "petbread": "German",
+                "category": "Dog",
+                "created_at": "2024-11-14T11:23:46.000000Z",
+                "updated_at": "2024-11-14T11:23:46.000000Z",
+                "user_assigned": 15
+            }
+        }
+    ]
+}
+********************************
+
+http://192.168.0.230:8002/api/user_appointment_history?petid=1
+method : get
+
+search by patient id
+{
+    "status": true,
+    "patient_history": [
+        {
+            "id": 25,
+            "user_id": 15,
+            "pet_id": 1,
+            "dr_id": 52,
+            "dateofapp": "2024-11-19 14:10:00",
+            "status": 0,
+            "amount": 1500,
+            "created_at": "2024-11-19T05:19:11.000000Z",
+            "updated_at": "2024-11-19T05:19:11.000000Z",
+            "payment": 1,
+            "doctor_details": {
+                "id": 52,
+                "name": "Doctor Balaji",
+                "email": "balaji@doc.com",
+                "phone": "9440161009",
+                "username": "balaji395",
+                "email_verified_at": "2024-10-10T07:23:36.000000Z",
+                "device_token": null,
+                "web_token": null,
+                "status": 5,
+                "country_code": "+297",
+                "is_guest": 10,
+                "balance": "0.000000",
+                "creator_type": null,
+                "creator_id": null,
+                "editor_type": null,
+                "editor_id": null,
+                "created_at": "2024-10-10T07:23:36.000000Z",
+                "updated_at": "2024-11-18T09:28:03.000000Z",
+                "deleted_at": null,
+                "password_code": 6847,
+                "exp_time": "2024-11-14 16:34:06",
+                "user_type": 2,
+                "state": "AP",
+                "city": "Nellore",
+                "profile_picture": "profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png",
+                "designation": null,
+                "mypets": 0,
+                "profile_picture_url": "http://192.168.0.230:8002/storage/profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png"
+            },
+            "pet_details": {
+                "id": 1,
+                "petname": "Simba",
+                "petgender": "M",
+                "petbread": "German",
+                "category": "Dog",
+                "created_at": "2024-11-14T11:23:46.000000Z",
+                "updated_at": "2024-11-14T11:23:46.000000Z",
+                "user_assigned": 15
+            }
+        }
+    ]
+}
+
+**************************************
+http://192.168.0.230:8002/api/user_appointment_history?appointmentdate=2024-11-19
+
+method : get
+
+seach by date
+
+{
+    "status": true,
+    "patient_details": [
+        {
+            "id": 25,
+            "user_id": 15,
+            "pet_id": 1,
+            "dr_id": 52,
+            "dateofapp": "2024-11-19 14:10:00",
+            "status": 0,
+            "amount": 1500,
+            "created_at": "2024-11-19T05:19:11.000000Z",
+            "updated_at": "2024-11-19T05:19:11.000000Z",
+            "payment": 1,
+            "doctor_details": {
+                "id": 52,
+                "name": "Doctor Balaji",
+                "email": "balaji@doc.com",
+                "phone": "9440161009",
+                "username": "balaji395",
+                "email_verified_at": "2024-10-10T07:23:36.000000Z",
+                "device_token": null,
+                "web_token": null,
+                "status": 5,
+                "country_code": "+297",
+                "is_guest": 10,
+                "balance": "0.000000",
+                "creator_type": null,
+                "creator_id": null,
+                "editor_type": null,
+                "editor_id": null,
+                "created_at": "2024-10-10T07:23:36.000000Z",
+                "updated_at": "2024-11-18T09:28:03.000000Z",
+                "deleted_at": null,
+                "password_code": 6847,
+                "exp_time": "2024-11-14 16:34:06",
+                "user_type": 2,
+                "state": "AP",
+                "city": "Nellore",
+                "profile_picture": "profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png",
+                "designation": null,
+                "mypets": 0,
+                "profile_picture_url": "http://192.168.0.230:8002/storage/profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png"
+            },
+            "pet_details": {
+                "id": 1,
+                "petname": "Simba",
+                "petgender": "M",
+                "petbread": "German",
+                "category": "Dog",
+                "created_at": "2024-11-14T11:23:46.000000Z",
+                "updated_at": "2024-11-14T11:23:46.000000Z",
+                "user_assigned": 15
+            }
+        }
+    ]
+}
+
+********************* RECEIPTIONIST*********************************
+receiptionist Dashboard
+
+http://192.168.0.230:8002/api/receiptionist_dashboard
+
+method: Get
+{
+    "status": true,
+    "total_appointment_count": 2,
+    "todays_appointment_count": 1,
+    "pet_details_count": 4,
+    "today_appointment_details": [
+        {
+            "id": 25,
+            "user_id": 15,
+            "pet_id": 1,
+            "dr_id": 52,
+            "dateofapp": "2024-11-19 14:10:00",
+            "status": 0,
+            "amount": 1500,
+            "created_at": "2024-11-19T05:19:11.000000Z",
+            "updated_at": "2024-11-19T05:19:11.000000Z",
+            "payment": 1,
+            "doctor_details": {
+                "id": 52,
+                "name": "Doctor Balaji",
+                "email": "balaji@doc.com",
+                "phone": "9440161009",
+                "username": "balaji395",
+                "email_verified_at": "2024-10-10T07:23:36.000000Z",
+                "device_token": null,
+                "web_token": null,
+                "status": 5,
+                "country_code": "+297",
+                "is_guest": 10,
+                "balance": "0.000000",
+                "creator_type": null,
+                "creator_id": null,
+                "editor_type": null,
+                "editor_id": null,
+                "created_at": "2024-10-10T07:23:36.000000Z",
+                "updated_at": "2024-11-18T09:28:03.000000Z",
+                "deleted_at": null,
+                "password_code": 6847,
+                "exp_time": "2024-11-14 16:34:06",
+                "user_type": 2,
+                "state": "AP",
+                "city": "Nellore",
+                "profile_picture": "profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png",
+                "designation": null,
+                "mypets": 0,
+                "profile_picture_url": "http://192.168.0.230:8002/storage/profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png"
+            },
+            "pet_details": {
+                "id": 1,
+                "petname": "Simba",
+                "petgender": "M",
+                "petbread": "German",
+                "category": "Dog",
+                "created_at": "2024-11-14T11:23:46.000000Z",
+                "updated_at": "2024-11-14T11:23:46.000000Z",
+                "user_assigned": 15
+            }
+        }
+    ]
+}
+
+
+
+*********************
+http://192.168.0.230:8002/api/receiptionist_dashboard?appointmentdate=2024-11-17
+
+search by date
+
+{
+    "status": true,
+    "total_appointment_count": 2,
+    "todays_appointment_count": 1,
+    "pet_details_count": 4,
+    "appointment_details_by_date": [
+        {
+            "id": 25,
+            "user_id": 15,
+            "pet_id": 1,
+            "dr_id": 52,
+            "dateofapp": "2024-11-19 14:10:00",
+            "status": 0,
+            "amount": 1500,
+            "created_at": "2024-11-19T05:19:11.000000Z",
+            "updated_at": "2024-11-19T05:19:11.000000Z",
+            "payment": 1,
+            "doctor_details": {
+                "id": 52,
+                "name": "Doctor Balaji",
+                "email": "balaji@doc.com",
+                "phone": "9440161009",
+                "username": "balaji395",
+                "email_verified_at": "2024-10-10T07:23:36.000000Z",
+                "device_token": null,
+                "web_token": null,
+                "status": 5,
+                "country_code": "+297",
+                "is_guest": 10,
+                "balance": "0.000000",
+                "creator_type": null,
+                "creator_id": null,
+                "editor_type": null,
+                "editor_id": null,
+                "created_at": "2024-10-10T07:23:36.000000Z",
+                "updated_at": "2024-11-18T09:28:03.000000Z",
+                "deleted_at": null,
+                "password_code": 6847,
+                "exp_time": "2024-11-14 16:34:06",
+                "user_type": 2,
+                "state": "AP",
+                "city": "Nellore",
+                "profile_picture": "profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png",
+                "designation": null,
+                "mypets": 0,
+                "profile_picture_url": "http://192.168.0.230:8002/storage/profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png"
+            },
+            "pet_details": {
+                "id": 1,
+                "petname": "Simba",
+                "petgender": "M",
+                "petbread": "German",
+                "category": "Dog",
+                "created_at": "2024-11-14T11:23:46.000000Z",
+                "updated_at": "2024-11-14T11:23:46.000000Z",
+                "user_assigned": 15
+            }
+        }
+    ]
+}
+
+*************************
+http://192.168.0.230:8002/api/add_staff
+
+Method : POST
+
+staff_name
+email
+phone
+designation
+role : if Dr send 2 if lab assistent 4 if receiptionist : 3 
+
+
+********************
+http://192.168.0.230:8002/api/get_staff
+Method : get
+
+****************
+http://192.168.0.230:8002/api/get_staff_by_id/{id}
+Method: get
+
+*******************
+http://192.168.0.230:8002/api/assign_to_doctor
+
+Method : Get
+
+{
+    "status": true,
+    "data": [
+        {
+            "id": 26,
+            "user_id": 15,
+            "pet_id": 2,
+            "dr_id": null,
+            "dateofapp": "2024-11-18 14:10:00",
+            "status": 0,
+            "status_details": "Booking Created",
+            "amount": 500,
+            "created_at": "2024-11-19T05:19:11.000000Z",
+            "updated_at": "2024-11-19T05:19:11.000000Z",
+            "payment": 1
+        },
+        {
+            "id": 27,
+            "user_id": 53,
+            "pet_id": 1,
+            "dr_id": null,
+            "dateofapp": "2024-11-19 14:10:00",
+            "status": 0,
+            "status_details": "Booking Created",
+            "amount": 1500,
+            "created_at": "2024-11-19T10:51:16.000000Z",
+            "updated_at": "2024-11-19T10:51:16.000000Z",
+            "payment": 1
+        },
+        {
+            "id": 28,
+            "user_id": 15,
+            "pet_id": 1,
+            "dr_id": null,
+            "dateofapp": "2024-11-20 17:10:00",
+            "status": 0,
+            "status_details": "Booking Created",
+            "amount": 500,
+            "created_at": "2024-11-19T10:55:57.000000Z",
+            "updated_at": "2024-11-19T10:55:57.000000Z",
+            "payment": 1
+        },
+        {
+            "id": 29,
+            "user_id": 15,
+            "pet_id": 1,
+            "dr_id": null,
+            "dateofapp": "2024-11-20 17:10:00",
+            "status": 0,
+            "status_details": "Booking Created",
+            "amount": 500,
+            "created_at": "2024-11-19T10:59:23.000000Z",
+            "updated_at": "2024-11-19T10:59:23.000000Z",
+            "payment": 1
+        },
+        {
+            "id": 30,
+            "user_id": 15,
+            "pet_id": 1,
+            "dr_id": null,
+            "dateofapp": "2024-11-20 11:03:00",
+            "status": 0,
+            "status_details": "Booking Created",
+            "amount": 500,
+            "created_at": "2024-11-19T11:01:08.000000Z",
+            "updated_at": "2024-11-19T11:01:08.000000Z",
+            "payment": 1
+        }
+    ],
+    "doctors": [
+        {
+            "id": 50,
+            "name": "Rani",
+            "email": "dropservices24.7@gmail.com",
+            "phone": "9874561471",
+            "username": "rani500",
+            "email_verified_at": null,
+            "device_token": null,
+            "web_token": null,
+            "status": 5,
+            "country_code": null,
+            "is_guest": 10,
+            "balance": "0.000000",
+            "creator_type": null,
+            "creator_id": null,
+            "editor_type": null,
+            "editor_id": null,
+            "created_at": "2024-11-14T11:17:47.000000Z",
+            "updated_at": "2024-11-14T11:17:47.000000Z",
+            "deleted_at": null,
+            "password_code": null,
+            "exp_time": null,
+            "user_type": 2,
+            "state": null,
+            "city": null,
+            "profile_picture": null,
+            "designation": "Jr Doctor",
+            "mypets": null,
+            "profile_picture_url": "http://192.168.0.230:8002/storage/profile_pictures\\avatar.jpg"
+        },
+        {
+            "id": 52,
+            "name": "Doctor Balaji",
+            "email": "balaji@doc.com",
+            "phone": "9440161009",
+            "username": "balaji395",
+            "email_verified_at": "2024-10-10T07:23:36.000000Z",
+            "device_token": null,
+            "web_token": null,
+            "status": 5,
+            "country_code": "+297",
+            "is_guest": 10,
+            "balance": "0.000000",
+            "creator_type": null,
+            "creator_id": null,
+            "editor_type": null,
+            "editor_id": null,
+            "created_at": "2024-10-10T07:23:36.000000Z",
+            "updated_at": "2024-11-18T09:28:03.000000Z",
+            "deleted_at": null,
+            "password_code": 6847,
+            "exp_time": "2024-11-14 16:34:06",
+            "user_type": 2,
+            "state": "AP",
+            "city": "Nellore",
+            "profile_picture": "profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png",
+            "designation": null,
+            "mypets": 0,
+            "profile_picture_url": "http://192.168.0.230:8002/storage/profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png"
+        }
+    ]
+}
+
+
+**********************
+appoimtment confirmed
+http://192.168.0.230:8002/api/appointment_confirmed
+
+doctor_name :  need to send dr id which give previous  {http://192.168.0.230:8002/api/assign_to_doctor} 
+aid: appoinemntid which given {http://192.168.0.230:8002/api/assign_to_doctor}
+
+response
+{
+    "status": true,
+    "message": "Appointment Confirmed & Assigned To Doctor"
+}
+
+************
+payment transaction details
+http://192.168.0.230:8002/api/get_all_transaction
+method: get
+
+{
+    "status": true,
+    "data": [
+        {
+            "id": 11,
+            "payment_mode": 1,
+            "payment_for": "E-Consultation",
+            "amount": 500,
+            "transactionid": null,
+            "payment_type": null,
+            "paid_by_id": 53,
+            "aid": 25,
+            "uid": 15,
+            "pid": 1,
+            "created_at": "2024-11-19T11:44:41.000000Z",
+            "updated_at": "2024-11-19T11:44:41.000000Z",
+            "payment_collect_by": {
+                "id": 53,
+                "name": "Receiptionist Navya",
+                "email": "navya@rec.com",
+                "phone": "9440161010",
+                "username": "navya@44251",
+                "email_verified_at": "2024-10-10T07:23:36.000000Z",
+                "device_token": null,
+                "web_token": null,
+                "status": 5,
+                "country_code": "+297",
+                "is_guest": 10,
+                "balance": "0.000000",
+                "creator_type": null,
+                "creator_id": null,
+                "editor_type": null,
+                "editor_id": null,
+                "created_at": "2024-10-10T07:23:36.000000Z",
+                "updated_at": "2024-11-18T09:28:03.000000Z",
+                "deleted_at": null,
+                "password_code": 6847,
+                "exp_time": "2024-11-14 16:34:06",
+                "user_type": 3,
+                "state": "AP",
+                "city": "Nellore",
+                "profile_picture": "profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png",
+                "designation": null,
+                "mypets": 0,
+                "profile_picture_url": "http://192.168.0.230:8002/storage/profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png"
+            }
+        },
+        {
+            "id": 12,
+            "payment_mode": 1,
+            "payment_for": "E-Consultation",
+            "amount": 500,
+            "transactionid": null,
+            "payment_type": null,
+            "paid_by_id": 53,
+            "aid": 25,
+            "uid": 15,
+            "pid": 1,
+            "created_at": "2024-11-19T11:45:56.000000Z",
+            "updated_at": "2024-11-19T11:45:56.000000Z",
+            "payment_collect_by": {
+                "id": 53,
+                "name": "Receiptionist Navya",
+                "email": "navya@rec.com",
+                "phone": "9440161010",
+                "username": "navya@44251",
+                "email_verified_at": "2024-10-10T07:23:36.000000Z",
+                "device_token": null,
+                "web_token": null,
+                "status": 5,
+                "country_code": "+297",
+                "is_guest": 10,
+                "balance": "0.000000",
+                "creator_type": null,
+                "creator_id": null,
+                "editor_type": null,
+                "editor_id": null,
+                "created_at": "2024-10-10T07:23:36.000000Z",
+                "updated_at": "2024-11-18T09:28:03.000000Z",
+                "deleted_at": null,
+                "password_code": 6847,
+                "exp_time": "2024-11-14 16:34:06",
+                "user_type": 3,
+                "state": "AP",
+                "city": "Nellore",
+                "profile_picture": "profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png",
+                "designation": null,
+                "mypets": 0,
+                "profile_picture_url": "http://192.168.0.230:8002/storage/profile_pictures/yDy6nrGnGVbFZi7Z9W6kHNYXAdXoJ2xAkbRZDUwx.png"
+            }
+        }
+    ]
+}
+
+
+*****************************************
+user flow compete api given
+receiptionist complete api except precreption pending once dr flow complete then only will come here
+
+pending
+dr flow
+admin flow
+lab tech flow
+
+
+*****************************************
