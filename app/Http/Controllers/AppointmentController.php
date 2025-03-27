@@ -1346,40 +1346,78 @@ public function ProductWiseReport_bkp(Request $request){
 
 // Product-wise data prepare cheyyali
 $productWiseReport = [];
+$total_pos_orders = 0; 
+$total_non_local_orders = 0; 
+        $total_tel_orders = 0;
+        $total_CGSTValue = 0;
+        $total_SGSTValue = 0;
+        $total_IGSTValue = 0;
+
+        $IGST_Amount = 0;
+        $IGST_Percentage = 0;
+        $CGST_Amount = 0;
+        $CGST_Percentage = 0;
+        $SGST_Amount = 0;
+        $SGST_Percentage = 0;
 
 foreach ($ordersQuery as $order) {
- 
-  
+    
+    
+
     $state = optional($order->address->first())->state ?? 'N/A';
     
     $order_type=$order->order_type;  // 5 for Online 15 for POS
 
+   
+
     foreach ($order->orderProducts as $orderProduct) {
         //  dd($orderProduct->discount);
+
+
+
         $taxPercentage = optional($orderProduct->product->productTaxes->first())->tax->tax_rate ?? 0;
         $taxAmount =$orderProduct->tax;
       
-        $CSGT = 0;
-        $CSGT_Percentage = 0;
-        $SSGT = 0;
-        $SSGT_Percentage = 0;
-        $IGST_Amount = 0;
-        $IGST_Percentage = 0;
+        if ($state == "Telangana") {
+            $total_tel_orders++;
+        }
+
+        if ($state != "Telangana") {
+            $total_non_local_orders++;
+        }
+
+        //total_non_local_orders
+
+        if ($order_type == 15) {
+            $total_pos_orders++;
+        }
+      
+
+        if (($order_type == 5 || $order_type == 15) && $state == "Telangana") {
+          
+            $CGST_Amount = $taxAmount / 2;
+            $CGST_Percentage = $taxPercentage / 2;
+            $SGST_Amount = $taxAmount / 2;
+            $SGST_Percentage = $taxPercentage / 2;
+        
+            $total_CGSTValue += $CGST_Amount; // ✅ Accumulate CGST
+            $total_SGSTValue += $SGST_Amount; // ✅ Accumulate SGST
+
+        } else {
+
+            $IGST_Amount = $taxAmount;
+            $IGST_Percentage = $taxPercentage;
+            $total_IGSTValue += $IGST_Amount; // ✅ Accumulate IGST
 
 
 
-        // if($state=="Telangana" || $order_type==15){
-           $IGST_Amount= $taxAmount;
-           $IGST_Percentage=$taxPercentage;
-        // }
+           
+        }
 
-        // else{
-            $CSGT=$taxAmount/2;
-            $CSGT_Percentage=$taxPercentage/2;
 
-            $SSGT=$taxAmount/2;
-            $SSGT_Percentage=$taxPercentage/2;
-        // }
+
+
+     
 
         $purchase_cost = $orderProduct->product->buying_price;
         $selling_cost = $orderProduct->product->selling_price; // MRP
@@ -1395,58 +1433,139 @@ foreach ($ordersQuery as $order) {
         $price = $orderProduct->price;
         $total = $quantity * $price;
         $total_avg_margin= $total-$total_purchased_amount;
+      
+
+      
 
         if (!isset($productWiseReport[$productId])) {
             $productWiseReport[$productId] = [
                 'product_name' => $productName,
                 'total_orders' => 0,
+                'total_telangana_orders' => 0, 
+                'total_non_local_orders' => 0, 
+                'total_pos_orders' => 0,
                 'total_quantity' => 0,
                 'total_selled_amount' => 0,
+                'total_selled_amount_without_tax' => 0,
                 'purchase_cost' => 0,
-                'avg_margin_cost' => 0,
-                'selling_cost' => 0,
                 'total_purchased_amount' => 0,
-                'total_avg_margin' => 0,
-                'hsnCode' => 0,
-                'IGST_Amount' => 0,
-                'IGST_Percentage' => 0,
-                'CSGT' => 0,
-                'CSGT_Percentage' => 0,
-                'SSGT' => 0,
-                'SSGT_Percentage' => 0,
-                'discount_amount' => 0,
+                'selling_cost' => 0,
                 'selling_cost_without_tax' => 0,
+                'avg_margin_cost' => 0,
+                'total_avg_margin' => 0,
+               
+                
+                'hsnCode' => 0,
+                // 'IGST_Amount' => 0,
+                'IGST_Percentage' => 0,
+                'total_IGSTValue' => 0,
+
+                'CGST_Percentage' => 0,
+                'CGST_Amount' => 0,
+                'total_CGSTValue' => 0,
+
+                'SGST_Percentage' => 0,
+                'SGST_Amount' => 0,
+                'total_SGSTValue' => 0,
+
+                'discount_amount' => 0,
+              
                 'taxPercentage' => 0,
+                'state' => 0,
+                'order_type' => 0,
             ];
         }
 
+        
+      
        
 
         $productWiseReport[$productId]['total_orders'] += 1;
         $productWiseReport[$productId]['total_quantity'] += $quantity;
         $productWiseReport[$productId]['total_selled_amount'] += $total;
+        $productWiseReport[$productId]['total_selled_amount_without_tax'] += $selling_cost_without_tax;
         $productWiseReport[$productId]['total_avg_margin'] += $total_avg_margin;
-        $productWiseReport[$productId]['purchase_cost']= $purchase_cost;
-        $productWiseReport[$productId]['avg_margin_cost']= $avg_margin_cost;
-        $productWiseReport[$productId]['selling_cost']= $selling_cost;
-        $productWiseReport[$productId]['hsnCode']= $hsnCode;
-        $productWiseReport[$productId]['IGST_Amount']= $IGST_Amount;
-        $productWiseReport[$productId]['IGST_Percentage']= $IGST_Percentage;
-         $productWiseReport[$productId]['total_purchased_amount']+= $total_purchased_amount;
-         $productWiseReport[$productId]['discount_amount']+= $discount_amount;
+        $productWiseReport[$productId]['purchase_cost'] = $purchase_cost;
+        $productWiseReport[$productId]['selling_cost'] = $selling_cost;
+        $productWiseReport[$productId]['avg_margin_cost'] = $avg_margin_cost;
+      
+        $productWiseReport[$productId]['hsnCode'] = $hsnCode;
+        // $productWiseReport[$productId]['IGST_Amount'] += $IGST_Amount;
+        $productWiseReport[$productId]['IGST_Percentage'] = $IGST_Percentage;
+        $productWiseReport[$productId]['total_IGSTValue'] += $IGST_Amount;
+        $productWiseReport[$productId]['total_purchased_amount'] += $total_purchased_amount;
 
-         $productWiseReport[$productId]['CSGT']= $CSGT;
-         $productWiseReport[$productId]['CSGT_Percentage']= $CSGT_Percentage;
-         $productWiseReport[$productId]['SSGT']= $SSGT;
-         $productWiseReport[$productId]['SSGT_Percentage']= $SSGT_Percentage;
-         $productWiseReport[$productId]['selling_cost_without_tax']= $selling_cost_without_tax;
-         $productWiseReport[$productId]['taxPercentage']= $taxPercentage;
+        $productWiseReport[$productId]['discount_amount'] += $discount_amount;
+
+        $productWiseReport[$productId]['CGST_Amount'] = $CGST_Amount;
+        $productWiseReport[$productId]['CGST_Percentage'] = $CGST_Percentage;
+        $productWiseReport[$productId]['total_CGSTValue'] = $total_CGSTValue;
+        // $productWiseReport[$productId]['total_CGSTValue'] += $CGST_Amount;
+
+        $productWiseReport[$productId]['SGST_Amount'] = $SGST_Amount;
+        $productWiseReport[$productId]['SGST_Percentage'] = $SGST_Percentage;
+
+        $productWiseReport[$productId]['total_SGSTValue'] = $total_SGSTValue;
+        $productWiseReport[$productId]['selling_cost_without_tax'] = $selling_cost_without_tax;
+        $productWiseReport[$productId]['taxPercentage'] = $taxPercentage;
+        $productWiseReport[$productId]['state'] = $state;
+        $productWiseReport[$productId]['order_type'] = $order_type;
+
+        // if ($state == "Telangana") {
+        //     $productWiseReport[$productId]['total_telangana_orders'] += 1;
+        // }
+
+        // if ($state != "Telangana") {
+        //     $productWiseReport[$productId]['total_non_local_orders'] = ($productWiseReport[$productId]['total_non_local_orders']+1) - $productWiseReport[$productId]['total_pos_orders'] ;
+        // }
+
+        // if ($order_type == 15) {
+        //     $productWiseReport[$productId]['total_pos_orders'] += 1;
+        // }
+
+
+        if (!isset($productWiseReport[$productId]['total_non_local_orders'])) {
+            $productWiseReport[$productId]['total_non_local_orders'] = 0;
+        }
+        
+        if ($state == "Telangana") {
+            $productWiseReport[$productId]['total_telangana_orders'] += 1;
+        } else {
+            $productWiseReport[$productId]['total_non_local_orders'] += 1;
+        }
+        
+        if ($order_type == 15) {
+            $productWiseReport[$productId]['total_pos_orders'] += 1;
+        }
+
+
+        //total_non_local_orders
+
     }
  
 }
 
 
 dd($productWiseReport);
+
+  // Prepare the CSV header, including 'Order Type'
+  $csvData = "Serial No.,Product Name,Quantity,Avg Margin,Total Avg Margin,Selling Price,HSN Code,SGST%,CGST%,IGST%,Discount Amount,MRP Rate,MRP Rate Without Tax,SGST,CGST,IGST,Taxable Amount,Total Amount\n";
+
+  $serialNo = 1;
+  foreach ($productWiseReport as $productId => $data) {
+      $csvData .= "{$serialNo},{$data['product_name']},{$data['total_quantity']},{$data['avg_margin_cost']},{$data['total_avg_margin']},{$data['selling_cost']},{$data['hsnCode']},{$data['SGST_Percentage']},{$data['CGST_Percentage']},{$data['IGST_Percentage']},{$data['discount_amount']},{$data['selling_cost']},{$data['selling_cost_without_tax']},{$data['total_SGSTValue']},{$data['total_CGSTValue']},{$data['total_IGSTValue']},{$data['total_selled_amount_without_tax']},{$data['total_selled_amount']}\n";
+      $serialNo++;
+  }
+
+ 
+
+  // Return the CSV file as a downloadable response
+  return response()->make($csvData, 200, [
+      'Content-Type' => 'text/csv',
+      'Content-Disposition' => 'attachment; filename="product_sales_data.csv"',
+  ]);
+
+
 
 }
     
